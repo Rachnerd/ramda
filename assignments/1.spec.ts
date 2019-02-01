@@ -1,15 +1,4 @@
-import {
-  addIndex,
-  converge,
-  curry,
-  flatten,
-  flip,
-  map,
-  mergeAll,
-  pipe,
-  reduce,
-  compose
-} from "ramda";
+import { empty } from "ramda";
 
 /**
  * Fix the unit tests by only changing the Ramda const.
@@ -39,7 +28,7 @@ describe("Ramda methods", () => {
 
     const prefixStringWithIndex = (s: string, index: number) => `${index}.${s}`;
 
-    Ramda = addIndex(map)(prefixStringWithIndex)(input);
+    Ramda = empty(input);
 
     /**
      * ES6
@@ -61,7 +50,7 @@ describe("Ramda methods", () => {
 
     const combineArrays = (acc: string[], value: string[]) => [...acc, ...value];
 
-    Ramda = reduce(combineArrays, [])(input);
+    Ramda = empty(input);
 
     /**
      * ES6
@@ -80,10 +69,7 @@ describe("Ramda methods", () => {
 
     const prefixStringWithIndex = (s: string, index: number) => `${index}.${s}`;
 
-    Ramda = pipe(
-      flatten,
-      addIndex(map)(prefixStringWithIndex)
-    )(input);
+    Ramda = empty(input);
 
     /**
      * ES6
@@ -102,7 +88,7 @@ describe("Ramda methods", () => {
 
     const prefixStringWithIndex = (s: string, index: number) => `${index}.${s}`;
 
-    Ramda = curry(prefixStringWithIndex)("Test")(input);
+    Ramda = empty(input);
 
     /**
      * ES6
@@ -121,7 +107,7 @@ describe("Ramda methods", () => {
 
     const prefixStringWithIndex = (s: string, index: number) => `${index}.${s}`;
 
-    Ramda = curry(flip(prefixStringWithIndex))(1)(input);
+    Ramda = empty(input);
 
     /**
      * ES6
@@ -151,7 +137,7 @@ describe("Ramda methods", () => {
       (n: number) => ({ plus10: n + 10 })
     ];
 
-    Ramda = converge((...results) => mergeAll(results), mappers)(input);
+    Ramda = empty(input);
 
     /**
      * ES6
@@ -178,7 +164,7 @@ describe("Ramda methods", () => {
     };
 
     const requestHandler = (locale: string) => {
-      const fn = compose(options => ({ ...options, locale }));
+      const fn = empty;
       return getState(fn);
     };
 
