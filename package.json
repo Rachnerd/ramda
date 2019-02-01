@@ -1,0 +1,26 @@
+{
+  "name": "ramda-assignments",
+  "version": "1.0.0",
+  "description": "Workshop Ramda",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Rachnerd",
+  "license": "ISC",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.19",
+    "@types/ramda": "^0.25.47",
+    "jest": "23.6.0",
+    "prettier": "^1.16.2",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.4"
+  },
+  "prettier": {
+    "printWidth": 100
+  }
+}
